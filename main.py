@@ -1,24 +1,13 @@
-from turtle import *
-k=20
-tracer(0)
-screensize (1000,1000)
-for i in range(2):
-    forward(17*k)
-    right(90)
-    forward(10*k)
-    right(90)
-penup ()
-forward(7*k)
-right(90)
-pendown()
-for i in range(2):
-    forward(20*k)
-    right(90)
-    forward(14*k)
-    right(90)
-penup()
-for x in range (-50,50):
-    for y in range(-50, 50):
-        setpos (x*k, y*k)
-        dot (5)
-done()
+'''Алгоритм вычисления значения функции F(n), где n — натуральное число, задан следующими соотношениями:
+
+F(n) = n + 1 при n ≤ 2;
+F(n) = 2*F(n - 1) + F(n - 2) при n > 2.
+
+Чему равно значение функции F(4)? В ответе запишите только натуральное число.'''
+
+def F(n):
+  if n <= 2:
+    return n+1
+  else:
+    return 2*F(n - 1) + F(n - 2)
+print (F(4))
