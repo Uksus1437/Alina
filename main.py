@@ -1,30 +1,17 @@
-'''
-Алгоритм вычисления значения функции F(n), где n - целое число, задан следующими соотношениями:
+'''Для какого наибольшего целого числа А формула
 
-F(n) = n при n < 10
-F(n) = 3n + F(n - 3), если n >= 10
+((x ≤ 9) →(x ⋅ x ≤ A)) ⋀ ((y ⋅ y ≤ A) → (y ≤ 9))
 
-Чему равно значение выражения (F(6250) + 2 * F(6244)) / F(6238)?
-
-В ответе запишите целую часть полученного числа.
-'''
-
-from sys import *
-
-setrecursionlimit(10**6)
+тождественно истинна, то есть принимает значение 1 при любых целых неотрицательных x и y?'''
 
 
-def F (n):
-  if n < 10:
-    return n
-  else:
-    return 3*n + F (n -3)
-print ((F(6250)+2*F(6244))/F(6238))
+for a in range(1, 10):
+  m = []
+  for x in (1, 100):
+    f = (x / (2*x) < a)   # f = 
+    m.append(f)           # m = [True, True, True, True, True, False, True, True, False]
+  if m.count(False) == 0:
+    print(a)
 
 
-
-#     return 3*n + F (n -3)
-#   [Previous line repeated 995 more times]
-#   File "/Users/mvgordeev/Documents/GitHub/Alina/main.py", line 14, in F
-#     if n < 10:
-# RecursionError: maximum recursion depth exceeded in comparison
+1
